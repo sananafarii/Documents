@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>FullScreen Slider </title>
+</head>
+<body>
+    <div class="wrap">
+        <div id="arrow-left" class="arrow"></div>
+
+            <div class="slider">
+                <div class="slide slide1">
+                    <div class="slide-content">
+                        <span>Image One</span>
+                    </div>
+                </div>
+
+                <div class="slide slide2">
+                    <div class="slide-content">
+                        <span>Image Two</span>
+                    </div>
+                </div>
+
+                <div class="slide slide3">
+                    <div class="slide-content">
+                        <span>Image Three</span>
+                    </div>
+                </div>
+            </div>
+
+        <div id="arrow-right" class="arrow"><div>  
+    </div>
+    <script>
+        let slideImages = document.querySelectorAll('.slide'),
+            arrowLeft= document.querySelector( '#arrow-left'),
+            arrowRight = document.querySelector( '#arrow-right'),
+            current = 0;
+
+         //Clear all images
+         function reset(){
+          for( let i = 0; i < slideImages.length; i++){
+            slideImages[i].style.display = 'none'; 
+          }
+         }
+
+         //Init slider
+         function startSlide(){
+            reset();
+            slideImages[0].style.display = 'block';
+         }
+
+
+
+         //Show prev
+         function slideLeft(){
+            reset();
+            slideImages[current - 1].style.display = 'block';
+            current--;
+         }
+
+
+         //Show next
+         function slideLeft(){
+            reset();
+            slideImages[current - 1].style.display = 'block';
+            current--;
+         }
+
+
+         //Left arrow click
+         arrowLeft.addEventListener('click', function(){
+            if(current === 0){
+             current = slideImages.length; 
+            }
+            slideLeft();
+         });
+
+          //Right arrow click
+          arrowRight.addEventListener('click', function(){
+            if(current === slideImages.length - 1){
+             current = -1
+            }
+            slideRight();
+         });
+
+
+
+
+
+         startSlide();
+    </script>
+</body>
+</html>

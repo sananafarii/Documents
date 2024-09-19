@@ -1,0 +1,133 @@
+@import url('https://use.fontawesome.com/releases/v5.15.4/css/all.css');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background: #333;
+    color: #ffff;
+    line-height: 1.6;
+}
+
+.slider{
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+.slide{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;  
+    transition: opacity 0.4s ease-in-out;
+
+}
+.slide.current{
+    opacity: 1;
+}
+
+.slide .content{
+    position: absolute;
+    bottom: 70px;
+    left: -600;
+    opacity: 0;
+    width: 600px;
+    background-color: rgb(255, 255, 255, 0.8);
+    color: #333;
+    padding: 35px;
+}
+
+
+.slide .content h1{
+    margin-bottom: 10px;
+}
+
+
+.slide.current .content{
+    opacity: 1;
+    transform: translateX(600px);
+    transition:  all 0.7s ease-in-out 0.3s;
+}
+
+button#next{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+}
+
+
+button#prev{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+}
+
+
+
+.buttons button {
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    padding: 13px 15px;
+    border-radius: 50%;
+    outline: none;
+}
+
+
+.buttons button:hover{
+    background-color: #fff;
+    color: #333;
+}
+
+@media (max-width: 500px){
+    .slide .content{
+        bottom: -30px;
+        left: 0;
+        width: 100%;
+    }
+
+
+    .slide.current .content{
+        transform: translateY(-300px);
+    }
+}
+
+
+
+
+
+/* Backgorund Images */
+ 
+.slide:first-child {
+    background: url('./Images/christopher-gower-m_HRfLhgABo-unsplash.jpg') no-repeat
+      center top/cover;
+  }
+  .slide:nth-child(2) {
+    background: url('./Images/darren-nunis-cxE7SXKnzv0-unsplash.jpg') no-repeat
+      center top/cover;
+  }
+  .slide:nth-child(3) {
+    background: url('./Images/joshua-sortino-f3uWi9G-lus-unsplash.jpg') no-repeat
+      center top/cover;
+  }
+  .slide:nth-child(4) {
+    background: url('./Images/keith-misner-h0Vxgz5tyXA-unsplash.jpg') no-repeat
+      center top/cover;
+  }
+  .slide:nth-child(5) {
+    background: url('./Images/mark-basarab-1OtUkD_8svc-unsplash.jpg') no-repeat
+      center top/cover;
+  } 
+  .slide:nth-child(6)  {
+    background: url('./Images/tevin-trinh-byEie_vJPVs-unsplash.jpg') no-repeat
+      center center/cover;
+  }

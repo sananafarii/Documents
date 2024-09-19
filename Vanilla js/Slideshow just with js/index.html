@@ -1,0 +1,34 @@
+<script>
+ var i = 0;
+ var images = [];
+ var time = 3000;
+
+
+ //Image List 
+ images[0] = 'ima';
+ images[1] = '';
+ images[2] = '';
+
+
+ //function images
+ function changeImage(){
+  document.slide.src = images[i];
+
+  if( i < images.length - 1 ){
+    i++;
+  } else {
+    i = 0;
+  }
+
+  setTimeout("changeImage()", time);
+ }
+
+ // change image to run initially when the page load
+ window.onload = changeImage;
+
+
+
+
+</script>
+
+<img name = "slide" width = "400"  height = "200">
